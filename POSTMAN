@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "59d8099d-dad1-46ec-bf96-7a356ef06e19",
+		"name": "EZ API TESTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49867590",
+		"_collection_link": "https://tiwaripriyanshu0917-1670864.postman.co/workspace/Priyanshu-Kumar-Tiwari's-Worksp~089f871f-4bdb-4f98-838d-818bb139a2de/collection/49867590-59d8099d-dad1-46ec-bf96-7a356ef06e19?action=share&source=collection_link&creator=49867590"
+	},
+	"item": [
+		{
+			"name": "https://vernanbackend.ezlab.in/api/contact-us/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Amit\",\r\n  \"email\": \"amit@example.com\",\r\n  \"phone\": \"9876543210\",\r\n  \"message\": \"Hello from Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vernanbackend.ezlab.in/api/contact-us/",
+					"protocol": "https",
+					"host": [
+						"vernanbackend",
+						"ezlab",
+						"in"
+					],
+					"path": [
+						"api",
+						"contact-us",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
