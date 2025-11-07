@@ -1,0 +1,82 @@
+:root {
+  --bg: #0f172a;       /* slate-900 */
+  --card: #111827;     /* gray-900 */
+  --muted: #94a3b8;    /* slate-400 */
+  --text: #e5e7eb;     /* gray-200 */
+  --accent: #22d3ee;   /* cyan-400 */
+  --danger: #f87171;   /* red-400 */
+  --ok: #34d399;       /* green-400 */
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, Arial; }
+
+.page {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: linear-gradient(180deg, #0b1220, #0a0f1a);
+  border: 1px solid #1f2937;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.title { font-size: clamp(22px, 2.8vw, 32px); margin: 0 0 4px; }
+.subtitle { color: var(--muted); margin: 0 0 24px; }
+
+.form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.field { display: grid; gap: 8px; }
+label { font-weight: 600; color: #cbd5e1; }
+
+input, textarea {
+  background: var(--card);
+  border: 1px solid #334155;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  outline: none;
+}
+input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(34,211,238,.15); }
+
+.error { color: var(--danger); font-size: 12px; }
+
+.btn {
+  margin-top: 6px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  color: #082f49;
+  cursor: pointer;
+}
+.btn[disabled] { opacity: .7; cursor: not-allowed; }
+
+.status {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.status.ok { background: rgba(52, 211, 153, .15); color: var(--ok); border: 1px solid rgba(52,211,153,.35); }
+.status.bad { background: rgba(248, 113, 113, .15); color: var(--danger); border: 1px solid rgba(248,113,113,.35); }
+
+/* responsive checks matching assignment breakpoints */
+@media (min-width: 720px) {
+  .form { grid-template-columns: 1fr 1fr; }
+  .field:nth-child(4) { grid-column: 1 / -1; } /* message full width */
+  .btn { width: fit-content; }
+}
